@@ -27,13 +27,13 @@ sigma = zeros(1, size(X, 2));
 %       
 
 
-
-
-
-
-
-
-
+% x_i is the ith feature (or column)
+for i = 1:size(X,2)
+  x_i = X(:,i);
+  mu(i) = mean(x_i);
+  sigma(i) = std(x_i);
+  X_norm(:,i) = (x_i .- mu(i)) ./ sigma(i);
+end
 % ============================================================
 
 end
