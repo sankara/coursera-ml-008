@@ -17,12 +17,16 @@ for iter = 1:num_iters
     %       of the cost function (computeCost) and gradient here.
     %
 
-
-
-
-
-
-
+    t = [];
+    for j = 1:length(X(1,:))
+      s = 0;
+      for i = 1:m
+        x = X(i, :);
+        s = s + ((theta' * x') - y(i)) * x(j);
+      end
+      t(j) = theta(j) - alpha / m * s;
+    end
+    theta = t';
     % ============================================================
 
     % Save the cost J in every iteration    
