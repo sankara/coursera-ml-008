@@ -104,7 +104,11 @@ fprintf('\n');
 % ====================== YOUR CODE HERE ======================
 % Recall that the first column of X is all-ones. Thus, it does
 % not need to be normalized.
-price = 0; % You should change this
+h_x = [1650, 3];
+for i = 1:size(h_x)
+  h_x = (h_x - mu(i)) / sigma(i);
+end
+price = [[1] h_x] * theta;
 
 
 % ============================================================
